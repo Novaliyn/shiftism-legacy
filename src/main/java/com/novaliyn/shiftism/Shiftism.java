@@ -2,6 +2,9 @@ package com.novaliyn.shiftism;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSword;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -14,12 +17,16 @@ public class Shiftism {
     public static final String MODID = "shiftism";
     public static final String VERSION = "1.0";
     public static Item miku_ingot;
+    public static Item miku_sword;
+    public static final Item.ToolMaterial MIKU = EnumHelper.addToolMaterial("MIKU", 4, 3939, 10f, 6f, 39).setRepairItem(new ItemStack(miku_ingot));
 
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         miku_ingot = new ItemShiftism().setUnlocalizedName("miku_ingot").setTextureName("shiftism:miku_ingot").setCreativeTab(tabShiftism);
         GameRegistry.registerItem(miku_ingot, miku_ingot.getUnlocalizedName().substring(5));
+        miku_sword = new ItemSword(MIKU).setUnlocalizedName("miku_sword").setTextureName("shiftism:miku_sword").setCreativeTab(tabShiftism);
+        GameRegistry.registerItem(miku_sword, miku_sword.getUnlocalizedName().substring(5));
     }
 
 
