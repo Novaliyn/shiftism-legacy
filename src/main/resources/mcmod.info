@@ -1,21 +1,16 @@
+[
 {
-	"modListVersion": 2,
-	"modList": [{
-		"modid": "${modId}",
-		"name": "${modName}",
-		"description": "Shiftism legacy version",
-		"version": "${modVersion}",
-		"mcversion": "${minecraftVersion}",
-		"url": "https://github.com/novaliyn/shiftism-legacy",
-		"updateUrl": "",
-		"authorList": ["novaliyn"],
-		"credits": "",
-		"logoFile": "",
-		"screenshots": [],
-		"parent": "",
-		"requiredMods": [],
-		"dependencies": [],
-		"dependants": [],
-		"useDependencyInformation": false
-	}]
+  "modid": "shiftism",
+  "name": "Shiftism",
+  "description": "Legacy isms of shifting",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["novaliyn"],
+  "credits": "nova and indigo",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
 }
+]
