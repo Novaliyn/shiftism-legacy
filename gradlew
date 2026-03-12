@@ -116,7 +116,15 @@ esac
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
-
+# If JAVA8_HOME is set in the environment, use it to override JAVA_HOME
+if [ -n "$JAVA8_HOME" ]; then
+    JAVA_HOME="$JAVA8_HOME"
+else
+    # Optional: Force the script to stop if the variable is missing 
+    # instead of letting it crash on Java 25
+    echo "ERROR: JAVA8_HOME is not set. This project requires Java 8."
+    exit 1
+fi
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then

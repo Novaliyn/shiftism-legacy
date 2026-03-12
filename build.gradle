@@ -62,6 +62,13 @@ processResources {
 // Ensures that the encoding of source files is set to UTF-8, see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+    
+    // Check if the environment variable exists before trying to use it
+    if (System.getenv('JAVA8_HOME')) {
+        def javaHome = System.getenv('JAVA8_HOME')
+        options.fork = true
+        options.forkOptions.executable = "${javaHome}/bin/javac"
+    }
 }
 
 // This task creates a .jar file containing the source code of this mod.

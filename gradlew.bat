@@ -15,6 +15,10 @@
 @rem
 
 @if "%DEBUG%" == "" @echo off
+@rem Force the use of JAVA8_HOME if it's set
+if not "%JAVA8_HOME%" == "" (
+    set "JAVA_HOME=%JAVA8_HOME%"
+)
 @rem ##########################################################################
 @rem
 @rem  Gradle startup script for Windows
