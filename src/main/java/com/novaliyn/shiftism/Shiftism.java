@@ -1,10 +1,13 @@
 package com.novaliyn.shiftism;
 
-import net.minecraft.init.Blocks;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import main.java.com.novaliyn.shiftism.ItemShiftism;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Shiftism.MODID, version = Shiftism.VERSION, name = "Shiftism")
 public class Shiftism {
@@ -16,7 +19,7 @@ public class Shiftism {
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         miku_ingot = new ItemShiftism().setUnlocalizedName("miku_ingot").setTextureName("shiftism:miku_ingot").setCreativeTab(tabShiftism);
-        GameRegistry.registerItem(miku_ingot, miku_ingot.getUnlocalizedName().subString(5));
+        GameRegistry.registerItem(miku_ingot, miku_ingot.getUnlocalizedName().substring(5));
     }
 
 
