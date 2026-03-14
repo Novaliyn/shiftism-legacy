@@ -22,6 +22,7 @@ public class Shiftism {
     public static Item miku_rod;
     public static Item impure_miku_dust;
     public static Item pure_miku_dust;
+    public static Item miku_nugget;
     public static final Item.ToolMaterial MIKU = EnumHelper.addToolMaterial("MIKU", 4, 3939, 10f, 6f, 39).setRepairItem(new ItemStack(miku_ingot));
 
 
@@ -38,12 +39,14 @@ public class Shiftism {
         GameRegistry.registerItem(impure_miku_dust, impure_miku_dust.getUnlocalizedName().substring(5));
         pure_miku_dust = new ItemShiftism().setUnlocalizedName("pure_miku_dust").setTextureName("shiftism:pure_miku_dust").setCreativeTab(tabShiftism);
         GameRegistry.registerItem(pure_miku_dust, pure_miku_dust.getUnlocalizedName().substring(5));
+        miku_nugget = new ItemShiftism().setUnlocalizedName("miku_nugget").setTextureName("shiftism:miku_nugget").setCreativeTab(tabShiftism);
     }
 
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        GameRegistry.addSmelting(pure_miku_dust, new ItemStack(miku_ingot), 3.9f);
+        GameRegistry.addSmelting(pure_miku_dust, new ItemStack(miku_nugget), 3.9f);
+        GameRegistry.addRecipe(new ItemStack(miku_ingot), new Object[]{"MMM", "MMM", "MMM", 'M', miku_nugget});
         GameRegistry.addRecipe(new ItemStack(miku_rod), new Object[]{"M", "M", 'M', miku_ingot});
         GameRegistry.addRecipe(new ItemStack(miku_sword), new Object[]{"M", "M", "R", 'M', miku_ingot, 'R', miku_rod});
     }
