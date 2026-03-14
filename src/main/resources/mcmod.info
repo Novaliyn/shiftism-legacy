@@ -2,7 +2,7 @@
 {
   "modid": "shiftism",
   "name": "Shiftism",
-  "description": "Legacy isms of shifting",
+  "description": "Legacy isms of shifting -- 1.21.11 rn",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
