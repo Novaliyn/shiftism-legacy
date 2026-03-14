@@ -27,6 +27,9 @@ public class Shiftism {
     public static Item impure_miku_dust;
     public static Item pure_miku_dust;
     public static Item miku_nugget;
+    public static Item miku_bucket;
+    public static Item miku_milk;
+
     //Blocks
     public static Block miku_ore;
 
@@ -36,6 +39,7 @@ public class Shiftism {
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new ShiftedEvents());
+        ShiftedPotions.register();
 
         //Items
         miku_ingot = new ItemShiftism().setUnlocalizedName("miku_ingot").setTextureName("shiftism:miku_ingot").setCreativeTab(tabShiftism);
@@ -50,6 +54,10 @@ public class Shiftism {
         GameRegistry.registerItem(pure_miku_dust, pure_miku_dust.getUnlocalizedName().substring(5));
         miku_nugget = new ItemShiftism().setUnlocalizedName("miku_nugget").setTextureName("shiftism:miku_nugget").setCreativeTab(tabShiftism);
         GameRegistry.registerItem(miku_nugget, miku_nugget.getUnlocalizedName().substring(5));
+        miku_bucket = new ItemMikuBucket().setUnlocalizedName("miku_bucket").setTextureName("shiftism:miku_bucket").setCreativeTab(tabShiftism);
+        GameRegistry.registerItem(miku_bucket, miku_bucket.getUnlocalizedName().substring(5));
+        miku_milk = new ItemMikuMilk().setUnlocalizedName("miku_milk").setTextureName("shiftism:miku_milk").setCreativeTab(tabShiftism);
+        GameRegistry.registerItem(miku_milk, miku_milk.getUnlocalizedName().substring(5));
 
         //Blocks
         miku_ore = new BlockMikuOre(Material.rock).setBlockName("miku_ore").setBlockTextureName("shiftism:miku_ore").setCreativeTab(tabShiftism);

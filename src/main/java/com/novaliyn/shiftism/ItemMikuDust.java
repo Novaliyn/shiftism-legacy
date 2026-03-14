@@ -16,7 +16,7 @@ public class ItemMikuDust extends ItemShiftism {
               world.spawnEntityInWorld(new EntityItem(world, x + 0.5, y, z + 0.5, new ItemStack(Shiftism.pure_miku_dust)));
                if (!player.capabilities.isCreativeMode) {
                     stack.stackSize--;
-              }
+               }
                return true;
             }
             return false;
